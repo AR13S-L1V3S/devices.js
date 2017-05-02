@@ -1,8 +1,8 @@
 # devices.js
 
-[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/0ckgpa2jojjd1wpc?svg=true)](https://ci.appveyor.com/project/async3619/puff)
-[![Build Dependencies](https://david-dm.org/async3619/devices.js/status.svg)](https://david-dm.org/async3619/puff)
-[![NPM published version](https://img.shields.io/npm/v/devices.js.svg)](https://www.npmjs.com/package/puff-screeny)
+[![AppVeyor Build Status](https://ci.appveyor.com/api/projects/status/0ckgpa2jojjd1wpc?svg=true)](https://ci.appveyor.com/project/async3619/devices.js)
+[![Build Dependencies](https://david-dm.org/async3619/devices.js/status.svg)](https://david-dm.org/async3619/devices.js)
+[![NPM published version](https://img.shields.io/npm/v/devices.js.svg)](https://www.npmjs.com/package/devices.js)
 [![Project license](https://img.shields.io/npm/l/devices.js.svg)]()
 
 Handle media devices (webcam, microphone) with node.js.  
