@@ -3,7 +3,6 @@
 
 #if defined(_MSC_VER)
 #	pragma optimize("gty", on)
-#	define _PLATFORMJS_WINDOWS_ // for development only.
 #endif
 
 #undef _WIN32_WINNT
