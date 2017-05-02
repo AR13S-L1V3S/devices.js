@@ -1,5 +1,80 @@
 # devices.js
-handle media devices (webcam, microphone) with node.js
+Handle media devices (webcam, microphone) with node.js.  
+Most of functions are work simillar with [navigator.mediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices) of HTML5 specification.
+
+## Installation
+
+```bash
+npm install devicesjs
+```
+
+or use git
+
+``` bash
+git clone https://github.com/async3619/devices.js
+cd device.js
+npm install
+```
+
+## Example
+
+```js
+const devicesjs = require("devicesjs");
+devicesjs.enumerateDevice().then(streams => {
+    // do something with streams ...
+})
+
+devicejs.ondevicechange = (e) => {
+    // do something ...
+}
+```
+
+## Support table
+
+| Windows (Vista or higher) | Linux | OS X |
+|:-------------------------:|:-----:|:----:|
+|             O             |   X   |   X  |
+
+## Functions
+
+#### devicesjs.enumerateDevices()
+
+__type:__ _function ()_<br/>
+__return:__ _promise.<Device[]>_
+
+get all available media devices that installed on computer.
+<br/>
+<br/>
+
+#### devicesjs.ondevicechange
+
+__type:__ _function (DeviceChangeEventArgs)_
+
+Event listener that'll be called when device has removed, attached, changed.
+<br/>
+<br/>
+
+#### DeviceChangeEventArgs
+
+__type:__ class<br/>
+__members:__
+
+|  Name  |  Type  | Value                                                   | Description                                                 |
+|:------:|:------:|---------------------------------------------------------|-------------------------------------------------------------|
+| target | Device | -                                                       | the device that makes event fire.                           |
+|  which | string | "active" / "disabled" / "added" / "removed" / "changed" | event type; you can determine device status by this member. |
+
+<br/>
+
+#### Device
+
+__type:__ class <br/>
+__members:__
+
+|   Name   |  Type  | Value | Description                                                                             |
+|:--------:|:------:|-------|-----------------------------------------------------------------------------------------|
+| deviceId | string | -     | contains device unique id.                                                              |
+|   label  | string | -     | contains device user-friendly name.<br/> _ex) Microphone (Realtek High Definition Audio)_ |
 
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">

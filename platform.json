@@ -1,0 +1,7 @@
+﻿{
+  "conditions": [
+    ['OS=="win"', {
+      "defines": ["_PLATFORMJS_WINDOWS_"] 
+    }]
+  ] 
+}
