@@ -105,7 +105,7 @@ private:
 	}
 
 private:
-	HRESULT QueryInterface(const IID& riid, void** ppvObject) override
+	STDMETHOD(QueryInterface)(const IID& riid, void** ppvObject) override
 	{
 		if (riid == IID_IUnknown || riid == __uuidof(IMMNotificationClient))
 		{
@@ -116,15 +116,15 @@ private:
 		*ppvObject = nullptr;
 		return E_NOINTERFACE;
 	}
-	ULONG AddRef() override
+	STDMETHOD_(ULONG, AddRef)() override
 	{
 		return 1;
 	}
-	ULONG Release() override
+	STDMETHOD_(ULONG, Release)() override
 	{
 		return 1;
 	}
-	HRESULT OnDeviceStateChanged(LPCWSTR pwstrDeviceId, DWORD dwNewState) override
+	STDMETHOD(OnDeviceStateChanged)(LPCWSTR pwstrDeviceId, DWORD dwNewState) override
 	{
 		std::wstring deviceId = pwstrDeviceId;
 		if (this->devices.find(deviceId) == this->devices.end()) {
@@ -136,7 +136,7 @@ private:
 		this->task->pushEvent(event);
 		return S_OK;
 	}
-	HRESULT OnDeviceAdded(LPCWSTR pwstrDeviceId) override
+	STDMETHOD(OnDeviceAdded)(LPCWSTR pwstrDeviceId) override
 	{
 		std::wstring deviceId = pwstrDeviceId;
 		if (this->devices.find(deviceId) == this->devices.end()) {
@@ -148,7 +148,7 @@ private:
 		this->task->pushEvent(event);
 		return S_OK;
 	}
-	HRESULT OnDeviceRemoved(LPCWSTR pwstrDeviceId) override
+	STDMETHOD(OnDeviceRemoved)(LPCWSTR pwstrDeviceId) override
 	{
 		std::wstring deviceId = pwstrDeviceId;
 		if (this->devices.find(deviceId) == this->devices.end()) {
@@ -160,7 +160,7 @@ private:
 		this->task->pushEvent(event);
 		return S_OK;
 	}
-	HRESULT OnDefaultDeviceChanged(EDataFlow flow, ERole role, LPCWSTR pwstrDefaultDeviceId) override
+	STDMETHOD(OnDefaultDeviceChanged)(EDataFlow flow, ERole role, LPCWSTR pwstrDefaultDeviceId) override
 	{
 		if ((role != eConsole && role != eCommunications) || (flow != eRender && flow != eCapture) || pwstrDefaultDeviceId == NULL)
 			return S_OK;
@@ -175,7 +175,7 @@ private:
 		this->task->pushEvent(event);
 		return S_OK;
 	}
-	HRESULT OnPropertyValueChanged(LPCWSTR pwstrDeviceId, const PROPERTYKEY key) override
+	STDMETHOD(OnPropertyValueChanged)(LPCWSTR pwstrDeviceId, const PROPERTYKEY key) override
 	{
 		return S_OK;
 	}
