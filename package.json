@@ -1,6 +1,6 @@
 {
   "name": "devices.js",
-  "version": "0.1.1",
+  "version": "0.2.0",
   "description": "handle media devices (webcam, microphone) with node.js",
   "main": "index.js",
   "scripts": {

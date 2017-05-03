@@ -6,7 +6,7 @@
 [![Project license](https://img.shields.io/npm/l/devices.js.svg)]()
 
 Handle media devices (webcam, microphone) with node.js.  
-Most of functions are work simillar with [navigator.mediaDevices](https://developer.mozilla.org/en-US/docs/Web/API/Navigator/mediaDevices) of HTML5 specification.
+This library follows W3C specification of [navigator.mediaDevices](https://www.w3.org/TR/mediacapture-streams/#mediadevices) perfectly.
 
 ## Installation
 

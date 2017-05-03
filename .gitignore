@@ -1,1 +1,6 @@
 build/
+auto.gypi
+autogypi.json
+auto-top.gypi
+binding.gyp
+node_modules/

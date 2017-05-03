@@ -3,15 +3,18 @@
 
 #if defined(_MSC_VER)
 #	pragma optimize("gty", on)
+#	define _PLATFORMJS_WINDOWS_
+#	define _WIN_VER 0x0A00
+#	undef _WIN32_WINNT
+#	define _WIN32_WINNT 0x0A00
 #endif
-
-#undef _WIN32_WINNT
-#define _WIN32_WINNT 0x0600
 
 #include <iostream>
 #include <unordered_map>
 #include <queue>
 #include <memory>
+#include <locale>
+#include <regex>
 
 #include "nbind/nbind.h"
 #include "nan.h"

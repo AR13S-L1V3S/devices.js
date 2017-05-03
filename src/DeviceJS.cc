@@ -9,6 +9,10 @@ DeviceJS* DeviceJS::getInstance(nbind::cbFunction& encodeFunction)
 
 	return DeviceJS::instance;
 }
+bool DeviceJS::checkCompatible(void)
+{
+	return devicejs_impl_t::checkCompatible();
+}
 
 std::string DeviceJS::encode(std::vector<short>& string)
 {
@@ -34,6 +38,7 @@ void DeviceJS::setOnDeviceChangeCallback(nbind::cbFunction& callback)
 NBIND_CLASS(DeviceJS)
 {
 	method(getInstance);
+	method(checkCompatible);
 	method(enumerateDevices);
 	method(setOnDeviceChangeCallback);
 }

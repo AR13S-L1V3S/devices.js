@@ -8,6 +8,7 @@ private:
 
 public:
 	static DeviceJS* getInstance(nbind::cbFunction& encodeFunction);
+	static bool checkCompatible(void);
 	static std::string encode(std::vector<short>& string);
 
 private:

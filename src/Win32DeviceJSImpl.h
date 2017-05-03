@@ -9,6 +9,7 @@ private:
 
 public:
 	static Win32DeviceJSImpl* getInstance(void);
+	static bool checkCompatible(void);
 
 private:
 	Win32DeviceJSImpl(void);
@@ -18,12 +19,12 @@ private:
 public:
 	virtual bool enumerateDevices(nbind::cbFunction& callback) override;
 	void setOnDeviceChangeCallback(nbind::cbFunction& callback) override;
+	
+public:
+	Nan::Callback* getOnDeviceChangeCallback(void);
 
 public:
 	virtual void release(void) override;
-
-public:
-	Nan::Callback* getOnDeviceChangeCallback(void);
 
 private:
 	Nan::Callback* ondevicechange;

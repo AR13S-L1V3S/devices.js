@@ -7,6 +7,7 @@
 	typedef std::string string_t;
 #	define MAKE_STRING(x) DeviceJS::encode(std::vector<short>(x, x + wcslen(x)))
 #else
+#	define NBIND_ERR(x) printf(x);
 	namespace nbind {
 		class cbFunction
 		{
