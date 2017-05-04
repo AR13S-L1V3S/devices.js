@@ -1,5 +1,5 @@
 ﻿(function (root, factory) {
-    module.exports = factory(typeof Promise === "undefined" ? require("promise") : Promise, require('nbind').init().lib);
+    module.exports = factory(typeof Promise === "undefined" ? require("promise") : Promise, require('nbind').init(__dirname).lib);
 })(this, function (Promise, library) {
     if (library.DeviceJS.checkCompatible() === true) {
         const lib = library.DeviceJS.getInstance(function (unicodeArray) {
