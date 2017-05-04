@@ -43,44 +43,7 @@ devicejs.ondevicechange = (e) => {
 
 ## Functions
 
-#### devicesjs.enumerateDevices()
-
-__type:__ _function ()_<br/>
-__return:__ _promise.<Device[]>_
-
-get all available media devices that installed on computer.
-<br/>
-<br/>
-
-#### devicesjs.ondevicechange
-
-__type:__ _function (DeviceChangeEventArgs)_
-
-Event listener that'll be called when device has removed, attached, changed.
-<br/>
-<br/>
-
-#### DeviceChangeEventArgs
-
-__type:__ class<br/>
-__members:__
-
-|  Name  |  Type  | Value                                                   | Description                                                 |
-|:------:|:------:|---------------------------------------------------------|-------------------------------------------------------------|
-| target | Device | -                                                       | the device that makes event fire.                           |
-|  which | string | "active" / "disabled" / "added" / "removed" / "changed" | event type; you can determine device status by this member. |
-
-<br/>
-
-#### Device
-
-__type:__ class <br/>
-__members:__
-
-|   Name   |  Type  | Value | Description                                                                             |
-|:--------:|:------:|-------|-----------------------------------------------------------------------------------------|
-| deviceId | string | -     | contains device unique id.                                                              |
-|   label  | string | -     | contains device user-friendly name.<br/> _ex) Microphone (Realtek High Definition Audio)_ |
+All supported functions are same with [W3C specification](https://www.w3.org/TR/mediacapture-streams/#mediadevices).
 
 ## License
 <img align="right" src="http://opensource.org/trademarks/opensource/OSI-Approved-License-100x137.png">
