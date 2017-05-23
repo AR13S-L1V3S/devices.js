@@ -1,6 +1,7 @@
 build/
-auto.gypi
-autogypi.json
-auto-top.gypi
-binding.gyp
+*.gyp
+*.gypi
+cmake-build-debug
+CMakeLists.txt
 node_modules/
+.idea/
