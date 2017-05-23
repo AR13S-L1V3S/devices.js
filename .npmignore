@@ -1,0 +1,7 @@
+build/
+*.gyp
+*.gypi
+cmake-build-debug
+CMakeLists.txt
+node_modules/
+.idea/
