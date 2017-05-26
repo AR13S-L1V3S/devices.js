@@ -13,6 +13,8 @@ environment:
   - nodejs_version: "7"
   - electron_version: "1.4.12"
     nodejs_version: "6"
+  - electron_version: "1.6.8"
+    nodejs_version: "6"
 
 
 platform:
